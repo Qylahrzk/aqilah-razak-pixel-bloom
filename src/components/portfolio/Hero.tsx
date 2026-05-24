@@ -1,6 +1,6 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
-import { ArrowUpRight, Instagram, Github, Linkedin, Youtube } from "lucide-react";
+import { ArrowUpRight, Camera, Code2, Play, Briefcase } from "lucide-react";
 import portrait from "@/assets/portrait.png";
 import { FloatingShapes, Triangle } from "./shapes";
 
@@ -62,7 +62,7 @@ export function Hero() {
             </a>
           </div>
           <div className="mt-8 flex gap-3 text-muted-foreground">
-            {[Instagram, Github, Youtube, Linkedin].map((Icon, idx) => (
+            {[Camera, Code2, Play, Briefcase].map((Icon, idx) => (
               <a
                 key={idx}
                 href="#"
