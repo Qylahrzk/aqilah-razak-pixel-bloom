@@ -1,24 +1,45 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
-import { ArrowUpRight, Camera, Code2, Play, Briefcase } from "lucide-react";
+import { ArrowUpRight, Linkedin, Instagram, Youtube, Github } from "lucide-react";
 import portrait from "@/assets/portrait.png";
 import { FloatingShapes, Triangle } from "./shapes";
 
 const ROLES = [
-  "Mobile Developer",
+  "App Developer",
   "UI/UX Designer",
   "Flutter Engineer",
   "Photographer",
   "Novel Writer",
-  "Creative Technologist",
 ];
 
 export function Hero() {
-  const [i, setI] = useState(0);
+  const [roleIndex, setRoleIndex] = useState( 0);
+  const [displayedText, setDisplayedText] = useState("");
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  const currentRole = ROLES[roleIndex];
+
   useEffect(() => {
-    const id = setInterval(() => setI((v) => (v + 1) % ROLES.length), 2600);
-    return () => clearInterval(id);
-  }, []);
+    let timer: ReturnType<typeof setTimeout>;
+    const typingSpeed = isDeleting ? 40 : 80;
+
+    if (!isDeleting && displayedText !== currentRole) {
+      timer = setTimeout(() => {
+        setDisplayedText(currentRole.slice(0, displayedText.length + 1));
+      }, typingSpeed);
+    } else if (!isDeleting && displayedText === currentRole) {
+      timer = setTimeout(() => setIsDeleting(true), 1800);
+    } else if (isDeleting && displayedText !== "") {
+      timer = setTimeout(() => {
+        setDisplayedText(currentRole.slice(0, displayedText.length - 1));
+      }, typingSpeed);
+    } else if (isDeleting && displayedText === "") {
+      setIsDeleting(false);
+      setRoleIndex((v) => (v + 1) % ROLES.length);
+    }
+
+    return () => clearTimeout(timer);
+  }, [displayedText, isDeleting, currentRole, roleIndex]);
 
   return (
     <section id="home" className="relative isolate overflow-hidden pt-32 pb-24">
@@ -62,15 +83,20 @@ export function Hero() {
             </a>
           </div>
           <div className="mt-8 flex gap-3 text-muted-foreground">
-            {[Camera, Code2, Play, Briefcase].map((Icon, idx) => (
-              <a
-                key={idx}
-                href="#"
+            {[
+              { Icon: Linkedin, label: "LinkedIn" },
+              { Icon: Instagram, label: "Instagram" },
+              { Icon: Youtube, label: "YouTube" },
+              { Icon: Github, label: "GitHub" },
+            ].map(({ Icon, label }) => (
+              <span
+                key={label}
                 className="grid h-9 w-9 place-items-center rounded-full border border-border bg-white transition-colors hover:border-pink hover:text-pink"
-                aria-label="social"
+                aria-label={label}
+                title={label}
               >
                 <Icon className="h-4 w-4" />
-              </a>
+              </span>
             ))}
           </div>
         </motion.div>
@@ -118,22 +144,13 @@ export function Hero() {
           <h2 className="mt-3 font-display text-4xl font-semibold leading-tight md:text-5xl">
             I'm a{" "}
             <span className="relative inline-block align-baseline" style={{ minWidth: 280 }}>
-              <AnimatePresence mode="wait">
-                <motion.span
-                  key={ROLES[i]}
-                  initial={{ y: 30, opacity: 0, filter: "blur(8px)" }}
-                  animate={{ y: 0, opacity: 1, filter: "blur(0px)" }}
-                  exit={{ y: -30, opacity: 0, filter: "blur(8px)" }}
-                  transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
-                  className="inline-block bg-gradient-to-r from-pink via-pink to-yellow bg-clip-text text-transparent"
-                >
-                  {ROLES[i]}
-                </motion.span>
-              </AnimatePresence>
+              <span className="inline-block bg-gradient-to-r from-pink via-pink to-yellow bg-clip-text text-transparent">
+                {displayedText}
+              </span>
               <motion.span
-                animate={{ opacity: [1, 0, 1] }}
+                animate={{ opacity: [1, 1, 1, 0, 1, 1, 1, 0] }}
                 transition={{ duration: 1, repeat: Infinity }}
-                className="ml-1 inline-block h-10 w-[3px] translate-y-1 bg-pink align-middle"
+                className="ml-0.5 inline-block h-9 w-[3px] translate-y-0.5 bg-pink align-middle"
               />
             </span>
           </h2>
