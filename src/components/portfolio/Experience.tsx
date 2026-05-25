@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { GraduationCap, Shield, Users, Trophy, Calendar, MapPin } from "lucide-react";
+import { GraduationCap, Shield, Users, Calendar, MapPin } from "lucide-react";
 
 const TIMELINE = [
   {
