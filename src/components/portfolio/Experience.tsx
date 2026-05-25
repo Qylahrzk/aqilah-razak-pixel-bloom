@@ -81,7 +81,7 @@ export function Experience() {
                       <h3 className="font-display text-lg font-semibold">{item.title}</h3>
                       <p className="text-sm font-medium text-muted-foreground">{item.org}</p>
                     </div>
-                  </section>
+                  </div>
 
                   <div className="mt-4 flex flex-wrap items-center gap-3 text-xs text-muted-foreground">
                     <span className="inline-flex items-center gap-1">
