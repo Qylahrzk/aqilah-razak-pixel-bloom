@@ -190,9 +190,11 @@ export function Hero() {
           <div className="mt-6 flex flex-wrap gap-x-5 gap-y-2 text-sm font-medium text-foreground">
             <a href="#skills" className="border-b-2 border-pink pb-0.5">My Skills</a>
             <span className="text-muted-foreground">|</span>
-            <a href="#projects" className="border-b-2 border-transparent pb-0.5 transition-colors hover:border-pink">My Experience</a>
+            <a href="#experience" className="border-b-2 border-transparent pb-0.5 transition-colors hover:border-pink">My Experience</a>
             <span className="text-muted-foreground">|</span>
-            <a href="#about" className="border-b-2 border-transparent pb-0.5 transition-colors hover:border-pink">My Art</a>
+            <a href="#certifications" className="border-b-2 border-transparent pb-0.5 transition-colors hover:border-pink">My Certs</a>
+            <span className="text-muted-foreground">|</span>
+            <a href="#projects" className="border-b-2 border-transparent pb-0.5 transition-colors hover:border-pink">My Projects</a>
           </div>
 
           <div className="mt-10 rounded-2xl border border-border bg-white/60 p-4 backdrop-blur">
