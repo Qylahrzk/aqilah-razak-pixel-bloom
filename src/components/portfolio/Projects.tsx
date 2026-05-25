@@ -4,23 +4,23 @@ import { ArrowUpRight, Smartphone } from "lucide-react";
 const PROJECTS = [
   {
     name: "MakanMana",
-    tagline: "Restaurant recommender using hybrid AI approaches",
+    tagline: "A Hybrid Restaurant Recommender with Multi-LLM Chatbot (Groq + Gemini API)",
     platform: "iOS & Android",
     stack: ["Flutter", "Firebase", "Python ML"],
     accent: "from-pink to-pink/60",
     screen: ["Today's pick", "Spicy noodles", "4.8★ · 12 min away"],
   },
   {
-    name: "DriveLog+",
-    tagline: "Smart university vehicle logging & management",
+    name: "DiaryQuest",
+    tagline: "A gamified diary with biometric authentication, chatbot and streak system",
     platform: "Android",
     stack: ["Flutter", "PostgreSQL", "REST API"],
     accent: "from-yellow to-pink",
     screen: ["Active trips", "Block B → C", "Driver: Aqilah"],
   },
   {
-    name: "SpendWise",
-    tagline: "Finance & budgeting mobile companion",
+    name: "Spendlytic+",
+    tagline: "A smart expense tracker with biometric authentication and Gemini API",
     platform: "iOS & Android",
     stack: ["Flutter", "Firebase", "Charts"],
     accent: "from-ink to-pink",

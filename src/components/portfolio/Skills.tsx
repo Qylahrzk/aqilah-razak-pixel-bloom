@@ -2,17 +2,17 @@ import { motion } from "framer-motion";
 import { Pen, Camera, Monitor, BookOpen, Smartphone, Code2, Brain } from "lucide-react";
 
 const BARS = [
-  ["Flutter", 95],
-  ["Dart", 92],
-  ["Python", 80],
-  ["SQL", 78],
-  ["PostgreSQL", 70],
-  ["Firebase", 88],
-  ["Git", 85],
-  ["Adobe Photoshop", 82],
-  ["Adobe Illustrator", 76],
-  ["Figma", 94],
-  ["MS Power BI", 65],
+  ["Flutter", 85],
+  ["Dart", 80],
+  ["Python", 70],
+  ["SQL", 75],
+  ["PostgreSQL", 65],
+  ["Supabase", 70],
+  ["Git", 65],
+  ["Adobe Photoshop", 85],
+  ["Adobe Illustrator", 85],
+  ["Figma", 80],
+  ["MS Power BI", 70],
   ["Adobe XD", 80],
 ] as const;
 
@@ -21,7 +21,7 @@ const SERVICES = [
   { icon: Camera, label: "Photographer" },
   { icon: Monitor, label: "Web Designer" },
   { icon: BookOpen, label: "Creative Writer" },
-  { icon: Smartphone, label: "Mobile App Developer" },
+  { icon: Smartphone, label: "App Developer" },
   { icon: Code2, label: "API Integration" },
   { icon: Brain, label: "AI Recommender" },
 ];
