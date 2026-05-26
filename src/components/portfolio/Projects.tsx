@@ -18,19 +18,19 @@ const PROJECTS = [
     accent: "from-pink to-pink/60",
     screen: ["Today's pick", "Spicy noodles", "4.8★ · 12 min away"],
     overview:
-      "MakanMana is a hybrid restaurant recommender that fuses content-based filtering with collaborative signals, then layers a multi-LLM chatbot on top so users can chat their cravings instead of scrolling endless menus.",
+      "MakanMana is a hybrid restaurant recommender that fuses Latent Dirichlet Allocation (LDA) with Knowledge-Based Filtering algorithm, then layers a multi-LLM chatbot on top so users can chat their cravings instead of scrolling endless listings.",
     role: "Mobile Developer · ML Integrator · UI Designer",
-    duration: "Final Year Project · 2024",
+    duration: "Final Year Project · Oct 2025",
     features: [
       "Hybrid recommender combining user preferences, location & ratings",
       "Conversational discovery powered by Groq (fast) + Gemini (reasoning)",
       "Google Maps integration for distance, directions and live ETA",
-      "Personalized 'Today's pick' feed that learns from feedback",
+      "Personalized 'Recommended For You' feed that learns from user preferences",
     ],
     challenges:
-      "Balancing latency between Groq and Gemini while keeping context coherent across turns. Solved with a routing layer that picks the right LLM per intent.",
+      "coming soon",
     outcome:
-      "Reduced average decision time by ~60% in user testing and achieved a 4.6/5 usability score.",
+      "coming soon",
   },
   {
     name: "DiaryQuest",
@@ -41,8 +41,8 @@ const PROJECTS = [
     screen: ["Active trips", "Block B → C", "Driver: Aqilah"],
     overview:
       "DiaryQuest turns daily journaling into a quest. Users unlock streaks, earn badges and chat with a reflective AI companion that helps them process the day.",
-    role: "Mobile Developer · Product Designer",
-    duration: "Personal Project · 2024",
+    role: "Mobile Developer · UI/UX Gamification Designer",
+    duration: "Personal Project · 2025-2026",
     features: [
       "Biometric login (fingerprint / face) for private entries",
       "Gamified streak system with badges and milestones",
@@ -62,9 +62,9 @@ const PROJECTS = [
     accent: "from-ink to-pink",
     screen: ["This month", "RM 1,284", "Saved 18%"],
     overview:
-      "Spendlytic+ is a smart expense tracker that learns your spending habits, auto-categorises transactions and gives Gemini-powered budgeting advice in plain language.",
+      "Spendlytic+ is a smart expense tracker that learns your spending habits, auto-categorises transactions and gives Gemini-powered extracting budget insights.",
     role: "Mobile Developer · UI/UX Designer",
-    duration: "Personal Project · 2024",
+    duration: "Personal Project · 2025-2026",
     features: [
       "Biometric-protected vault for financial data",
       "AI auto-categorisation of expenses",
