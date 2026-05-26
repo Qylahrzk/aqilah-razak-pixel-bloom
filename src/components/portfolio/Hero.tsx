@@ -194,7 +194,7 @@ export function Hero() {
             <span className="text-muted-foreground">|</span>
             <a href="#projects" className="border-b-2 border-transparent pb-0.5 transition-colors hover:border-pink">My Projects</a>
             <span className="text-muted-foreground">|</span>
-            <a href="#artworks" className="border-b-2 border-transparent pb-0.5 transition-colors hover:border-pink">My Artworks</a>
+            <a href="#artworks" className="border-b-2 border-transparent pb-0.5 transition-colors hover:border-pink">My Arts</a>
           </div>
 
           <div className="mt-10 rounded-2xl border border-border bg-white/60 p-4 backdrop-blur">
