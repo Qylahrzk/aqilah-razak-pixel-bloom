@@ -1,5 +1,13 @@
 import { motion } from "framer-motion";
-import { ArrowUpRight, Smartphone } from "lucide-react";
+import { ArrowUpRight, Smartphone, Sparkles, Target, Lightbulb, Wrench } from "lucide-react";
+import { useState } from "react";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+} from "@/components/ui/dialog";
 
 const PROJECTS = [
   {
@@ -9,6 +17,20 @@ const PROJECTS = [
     stack: ["Flutter", "Supabase", "Python API", "Groq", "Gemini API", "Google Maps API"],
     accent: "from-pink to-pink/60",
     screen: ["Today's pick", "Spicy noodles", "4.8★ · 12 min away"],
+    overview:
+      "MakanMana is a hybrid restaurant recommender that fuses content-based filtering with collaborative signals, then layers a multi-LLM chatbot on top so users can chat their cravings instead of scrolling endless menus.",
+    role: "Mobile Developer · ML Integrator · UI Designer",
+    duration: "Final Year Project · 2024",
+    features: [
+      "Hybrid recommender combining user preferences, location & ratings",
+      "Conversational discovery powered by Groq (fast) + Gemini (reasoning)",
+      "Google Maps integration for distance, directions and live ETA",
+      "Personalized 'Today's pick' feed that learns from feedback",
+    ],
+    challenges:
+      "Balancing latency between Groq and Gemini while keeping context coherent across turns. Solved with a routing layer that picks the right LLM per intent.",
+    outcome:
+      "Reduced average decision time by ~60% in user testing and achieved a 4.6/5 usability score.",
   },
   {
     name: "DiaryQuest",
@@ -17,6 +39,20 @@ const PROJECTS = [
     stack: ["Flutter", "Supabase", "Gemini API"],
     accent: "from-yellow to-pink",
     screen: ["Active trips", "Block B → C", "Driver: Aqilah"],
+    overview:
+      "DiaryQuest turns daily journaling into a quest. Users unlock streaks, earn badges and chat with a reflective AI companion that helps them process the day.",
+    role: "Mobile Developer · Product Designer",
+    duration: "Personal Project · 2024",
+    features: [
+      "Biometric login (fingerprint / face) for private entries",
+      "Gamified streak system with badges and milestones",
+      "Gemini-powered reflection chatbot for journaling prompts",
+      "Mood tracking with weekly insight summaries",
+    ],
+    challenges:
+      "Designing a streak system that motivates without punishing missed days. Introduced 'streak shields' earned via consistency.",
+    outcome:
+      "Built a calming, engaging diary experience that makes self-reflection feel like a game worth showing up to.",
   },
   {
     name: "Spendlytic+",
@@ -25,10 +61,27 @@ const PROJECTS = [
     stack: ["Flutter", "Supabase", "Gemini API"],
     accent: "from-ink to-pink",
     screen: ["This month", "RM 1,284", "Saved 18%"],
+    overview:
+      "Spendlytic+ is a smart expense tracker that learns your spending habits, auto-categorises transactions and gives Gemini-powered budgeting advice in plain language.",
+    role: "Mobile Developer · UI/UX Designer",
+    duration: "Personal Project · 2024",
+    features: [
+      "Biometric-protected vault for financial data",
+      "AI auto-categorisation of expenses",
+      "Monthly insights & savings tips via Gemini",
+      "Cross-platform iOS & Android with cloud sync",
+    ],
+    challenges:
+      "Making AI advice feel personal without leaking sensitive data. All prompts run on anonymised aggregates before reaching Gemini.",
+    outcome:
+      "Helped early testers cut discretionary spending by an average of 18% in the first month.",
   },
 ];
 
 export function Projects() {
+  const [active, setActive] = useState<number | null>(null);
+  const p = active !== null ? PROJECTS[active] : null;
+
   return (
     <section id="projects" className="relative mx-auto max-w-7xl px-6 py-20">
       <div className="relative overflow-hidden rounded-[2.5rem] bg-secondary px-6 py-20 md:px-16">
@@ -39,7 +92,7 @@ export function Projects() {
           <p className="text-xs font-semibold uppercase tracking-[0.3em] text-pink">— Selected work</p>
           <h2 className="mt-3 font-display text-5xl font-bold">My Projects</h2>
           <p className="mx-auto mt-3 max-w-md text-sm text-muted-foreground">
-            Explore the applications and creative systems I've designed and shipped.
+            Tap any project to dive into the full story — features, challenges and outcomes.
           </p>
           <a href="#contact" className="mt-6 inline-flex items-center gap-2 rounded-full bg-yellow px-5 py-2.5 text-sm font-semibold text-ink">
             See more <ArrowUpRight className="h-4 w-4" />
@@ -55,7 +108,8 @@ export function Projects() {
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 0.7, delay: idx * 0.1 }}
               whileHover={{ y: -10 }}
-              className="group rounded-3xl bg-background p-5 shadow-[0_30px_80px_-40px_rgba(0,0,0,0.3)]"
+              onClick={() => setActive(idx)}
+              className="group cursor-pointer rounded-3xl bg-background p-5 shadow-[0_30px_80px_-40px_rgba(0,0,0,0.3)] transition-shadow hover:shadow-[0_40px_100px_-30px_rgba(0,0,0,0.4)]"
             >
               {/* Phone mockup */}
               <div className={`relative mx-auto h-72 w-44 rounded-[2rem] bg-gradient-to-br ${p.accent} p-2 shadow-2xl`}>
@@ -90,11 +144,81 @@ export function Projects() {
                     </span>
                   ))}
                 </div>
+                <div className="mt-4 inline-flex items-center gap-1 text-xs font-semibold text-pink opacity-0 transition-opacity group-hover:opacity-100">
+                  Read case study <ArrowUpRight className="h-3 w-3" />
+                </div>
               </div>
             </motion.article>
           ))}
         </div>
       </div>
+
+      <Dialog open={active !== null} onOpenChange={(o) => !o && setActive(null)}>
+        <DialogContent className="max-h-[85vh] max-w-2xl overflow-y-auto rounded-3xl">
+          {p && (
+            <>
+              <DialogHeader>
+                <div className="flex items-center gap-2 text-[10px] uppercase tracking-widest text-muted-foreground">
+                  <Smartphone className="h-3 w-3" /> {p.platform} · {p.duration}
+                </div>
+                <DialogTitle className="font-display text-3xl font-bold">{p.name}</DialogTitle>
+                <DialogDescription className="text-sm">{p.tagline}</DialogDescription>
+              </DialogHeader>
+
+              <div className="mt-2 space-y-6 text-sm">
+                <p className="leading-relaxed text-foreground/80">{p.overview}</p>
+
+                <div>
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.25em] text-pink">My Role</p>
+                  <p className="mt-1 text-foreground/80">{p.role}</p>
+                </div>
+
+                <div>
+                  <div className="flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.25em] text-pink">
+                    <Sparkles className="h-3 w-3" /> Key Features
+                  </div>
+                  <ul className="mt-2 space-y-1.5">
+                    {p.features.map((f) => (
+                      <li key={f} className="flex gap-2 text-foreground/80">
+                        <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-pink" />
+                        <span>{f}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className="grid gap-4 sm:grid-cols-2">
+                  <div className="rounded-2xl bg-secondary p-4">
+                    <div className="flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.25em] text-pink">
+                      <Lightbulb className="h-3 w-3" /> Challenge
+                    </div>
+                    <p className="mt-2 text-foreground/80">{p.challenges}</p>
+                  </div>
+                  <div className="rounded-2xl bg-secondary p-4">
+                    <div className="flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.25em] text-pink">
+                      <Target className="h-3 w-3" /> Outcome
+                    </div>
+                    <p className="mt-2 text-foreground/80">{p.outcome}</p>
+                  </div>
+                </div>
+
+                <div>
+                  <div className="flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.25em] text-pink">
+                    <Wrench className="h-3 w-3" /> Tech Stack
+                  </div>
+                  <div className="mt-2 flex flex-wrap gap-1.5">
+                    {p.stack.map((s) => (
+                      <span key={s} className="rounded-full border border-border bg-background px-2.5 py-1 text-[10px] font-medium">
+                        {s}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </>
+          )}
+        </DialogContent>
+      </Dialog>
     </section>
   );
 }
