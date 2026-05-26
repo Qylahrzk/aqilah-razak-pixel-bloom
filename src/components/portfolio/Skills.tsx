@@ -32,7 +32,7 @@ export function Skills() {
       <div className="grid gap-16 lg:grid-cols-2">
         {/* LEFT: bars */}
         <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-pink">— My Skills</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-pink">— 03 / Skills</p>
           <h2 className="mt-3 font-display text-4xl font-bold">What my skills include</h2>
           <p className="mt-4 max-w-md text-sm leading-relaxed text-muted-foreground">
             I continuously develop my skills across both technical and creative
@@ -77,9 +77,8 @@ export function Skills() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: idx * 0.08 }}
               whileHover={{ y: -8, rotate: idx % 2 === 0 ? -1 : 1 }}
-              className={`group rounded-3xl border border-border bg-white p-6 text-center shadow-[0_20px_60px_-30px_rgba(0,0,0,0.2)] ${
-                idx % 2 === 0 ? "translate-y-0" : "translate-y-8"
-              }`}
+              className={`group rounded-3xl border border-border bg-white p-6 text-center shadow-[0_20px_60px_-30px_rgba(0,0,0,0.2)] ${idx % 2 === 0 ? "translate-y-0" : "translate-y-8"
+                }`}
             >
               <div className="mx-auto mb-3 grid h-12 w-12 place-items-center rounded-2xl bg-yellow text-ink transition-transform group-hover:scale-110">
                 <s.icon className="h-6 w-6" />
