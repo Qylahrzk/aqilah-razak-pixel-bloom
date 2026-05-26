@@ -5,9 +5,9 @@ const TIMELINE = [
   {
     icon: GraduationCap,
     title: "Bachelor of Computer Science (Mobile Computing)",
-    org: "Universiti Teknikal Malaysia Melaka (UTeM)",
-    period: "2022 — Present",
-    location: "Melaka, Malaysia",
+    org: "Universiti Teknologi Mara (UiTM)",
+    period: "2023 — Present",
+    location: "Kuala Terengganu, Terengganu, Malaysia",
     tags: ["Dean's List", "Mobile Development", "UI/UX Design"],
     description:
       "Pursuing a degree focused on mobile application development, software engineering, and human-computer interaction. Active in academic and co-curricular pursuits.",
@@ -17,20 +17,30 @@ const TIMELINE = [
     title: "SUKSIS — Police Undergraduate Volunteer",
     org: "Royal Malaysia Police (PDRM)",
     period: "2023 — Present",
-    location: "UTeM Branch",
+    location: "UiTM Terengganu Branch",
     tags: ["Discipline", "Leadership", "Community Service"],
     description:
       "Serving as a SUKSIS volunteer with training in discipline, physical fitness, and community policing. Participated in campus safety programs and ceremonial duties.",
   },
   {
+    icon: GraduationCap,
+    title: "Science Program — Module 3 (Computer Science)",
+    org: "Kolej Matrikulasi Perak (KMPk)",
+    period: "2021 — 2023",
+    location: "Gopeng, Perak, Malaysia",
+    tags: ["Academic Excellence", "Programming", "Science Foundation"],
+    description:
+      "Completed the Computer Science module to prepare for a degree focused on computer science area. Actively participated in academic and co-curricular activities.",
+  },
+  {
     icon: Users,
     title: "Student Representative / Club Activities",
-    org: "Faculty of Information & Communication Technology",
-    period: "2023 — Present",
-    location: "UTeM",
+    org: "Performance Arts & Culture Club (PARTS)",
+    period: "2021 — 2023",
+    location: "KMPk",
     tags: ["Event Organizing", "Teamwork", "Public Speaking"],
     description:
-      "Involved in faculty-level student activities including tech events, workshops, and peer mentoring programs. Contributing to student welfare and academic engagement initiatives.",
+      "Actively contributed to college events, workshops, and peer mentoring initiatives. Served as Head Secretary for the Performing Arts and Culture Club (PARTS) Executive Committee and photographer for the Multimedia Club.",
   },
 ];
 
@@ -60,9 +70,8 @@ export function Experience() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.6, delay: idx * 0.1 }}
-              className={`relative mb-12 flex items-start gap-6 md:gap-0 ${
-                isLeft ? "md:flex-row-reverse" : ""
-              }`}
+              className={`relative mb-12 flex items-start gap-6 md:gap-0 ${isLeft ? "md:flex-row-reverse" : ""
+                }`}
             >
               {/* Dot */}
               <div className="absolute left-4 top-6 z-10 h-3 w-3 -translate-x-[5px] rounded-full bg-pink ring-4 ring-pink/20 md:left-1/2 md:-translate-x-1.5" />

@@ -13,7 +13,7 @@ const ROLES = [
 ];
 
 export function Hero() {
-  const [roleIndex, setRoleIndex] = useState( 0);
+  const [roleIndex, setRoleIndex] = useState(0);
   const [displayedText, setDisplayedText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
 
@@ -183,18 +183,18 @@ export function Hero() {
             </span>
           </h2>
           <p className="mt-5 max-w-sm text-sm leading-relaxed text-muted-foreground">
-            I build cross-platform mobile products with Flutter and Firebase —
+            I build cross-platform mobile products with Flutter and Supabase —
             focused on intuitive, human-friendly experiences that feel as good
             as they look.
           </p>
           <div className="mt-6 flex flex-wrap gap-x-5 gap-y-2 text-sm font-medium text-foreground">
-            <a href="#skills" className="border-b-2 border-pink pb-0.5">My Skills</a>
+            <a href="#experience" className="border-b-2 border-pink pb-0.5">My Experience</a>
             <span className="text-muted-foreground">|</span>
-            <a href="#experience" className="border-b-2 border-transparent pb-0.5 transition-colors hover:border-pink">My Experience</a>
-            <span className="text-muted-foreground">|</span>
-            <a href="#certifications" className="border-b-2 border-transparent pb-0.5 transition-colors hover:border-pink">My Certs</a>
+            <a href="#achievements" className="border-b-2 border-transparent pb-0.5 transition-colors hover:border-pink">My Awards</a>
             <span className="text-muted-foreground">|</span>
             <a href="#projects" className="border-b-2 border-transparent pb-0.5 transition-colors hover:border-pink">My Projects</a>
+            <span className="text-muted-foreground">|</span>
+            <a href="#artworks" className="border-b-2 border-transparent pb-0.5 transition-colors hover:border-pink">My Artworks</a>
           </div>
 
           <div className="mt-10 rounded-2xl border border-border bg-white/60 p-4 backdrop-blur">

@@ -3,52 +3,44 @@ import { Award, Clock, CheckCircle2, ExternalLink } from "lucide-react";
 
 const CERTS = [
   {
-    name: "Google UX Design Professional Certificate",
-    issuer: "Google / Coursera",
+    name: "Introduction of Internet of Things (IoT)",
+    issuer: "Cisco Networking Academy (NetAcad)",
+    date: "May 10,2026",
+    status: "completed" as const,
+    skills: ["Internet of Things", "Machine Learning", "Data Analytics", "Cybersecurity"],
+    credential: "https://www.credly.com/badges/f01b01e2-ca38-477a-9b0f-7c662cd3f1e5",
+  },
+  {
+    name: "International Tinker Innovation & Entrepreneurship Challenge (i-TIEC) 2026 ",
+    issuer: "UiTM Johor Branch",
+    date: "April 17,2026",
+    status: "completed" as const,
+    skills: ["Innovation", "Entrepreneurship", "Flutter", "IoT", "Sensors"],
+    credential: "",
+  },
+  {
+    name: "4th UMPSA x HUAWEI AppGallery Mobile App Competition (UXHMAC 2025)",
+    issuer: "Universiti Malaysia Pahang Al-Sultan Abdullah (UMPSA)",
+    date: "2025",
+    status: "completed" as const,
+    skills: ["UXUI", "Mobile App Competition", "HUAWEI AppGallery", "UpCycle"],
+    credential: "",
+  },
+  {
+    name: "4th Graduate Digital Invention, Innovation & Design (GDIID) ",
+    issuer: "UiTM Terengganu Branch",
+    date: "2025",
+    status: "completed" as const,
+    skills: ["Mobile Application", "UXUI", "App Invention", "Money Tracker"],
+    credential: "",
+  },
+  {
+    name: "Responsive Web Design Certificate",
+    issuer: "freeCodeCamp",
     date: "2024",
     status: "completed" as const,
-    skills: ["User Research", "Wireframing", "Prototyping", "Figma"],
-    credential: "Credential ID: ABC123XYZ",
-  },
-  {
-    name: "Flutter & Dart — The Complete Guide",
-    issuer: "Academind / Udemy",
-    date: "2024",
-    status: "completed" as const,
-    skills: ["Flutter", "Dart", "State Management", "Firebase"],
-    credential: "Credential ID: DEF456UVW",
-  },
-  {
-    name: "IBM Data Science Professional Certificate",
-    issuer: "IBM / Coursera",
-    date: "2025",
-    status: "in-progress" as const,
-    skills: ["Python", "SQL", "Data Visualization", "Machine Learning"],
-    credential: null,
-  },
-  {
-    name: "Meta Front-End Developer Certificate",
-    issuer: "Meta / Coursera",
-    date: "2025",
-    status: "in-progress" as const,
-    skills: ["React", "JavaScript", "CSS", "Accessibility"],
-    credential: null,
-  },
-  {
-    name: "AWS Cloud Practitioner",
-    issuer: "Amazon Web Services",
-    date: "2025",
-    status: "planned" as const,
-    skills: ["Cloud Computing", "AWS Services", "Architecture"],
-    credential: null,
-  },
-  {
-    name: "Power BI Data Analyst",
-    issuer: "Microsoft",
-    date: "2024",
-    status: "completed" as const,
-    skills: ["Power BI", "DAX", "Data Modeling", "Visualization"],
-    credential: "Credential ID: GHI789RST",
+    skills: ["Responsive Web Design", "HTML", "CSS"],
+    credential: "",
   },
 ];
 
@@ -58,14 +50,14 @@ const statusConfig = {
   planned: { icon: Award, color: "text-muted-foreground bg-secondary border-border", label: "Planned" },
 };
 
-export function Certifications() {
+export function Achievements() {
   return (
-    <section id="certifications" className="relative mx-auto max-w-7xl px-6 py-24">
+    <section id="achievements" className="relative mx-auto max-w-7xl px-6 py-24">
       <div className="text-center">
         <p className="text-xs font-semibold uppercase tracking-[0.3em] text-pink">
-          — Credentials
+          — Achievements
         </p>
-        <h2 className="mt-3 font-display text-5xl font-bold">Certifications</h2>
+        <h2 className="mt-3 font-display text-5xl font-bold">Awards & Achievements</h2>
         <p className="mx-auto mt-3 max-w-md text-sm text-muted-foreground">
           Professional certifications and courses that sharpen my skills and validate my expertise.
         </p>
