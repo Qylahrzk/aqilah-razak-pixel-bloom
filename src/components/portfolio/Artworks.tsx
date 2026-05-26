@@ -113,8 +113,4 @@ export function Artworks() {
       </motion.p>
     </section>
   );
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> c0ca9b0623b1e6c62dcbc27893eba9c724294015
