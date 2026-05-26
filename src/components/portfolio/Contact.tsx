@@ -16,7 +16,7 @@ export function Contact() {
           </p>
           <div className="mt-8 space-y-2 text-sm">
             <p className="text-muted-foreground">Email</p>
-            <a href="mailto:hello@aqilahrazak.dev" className="font-display text-lg font-semibold">hello@aqilahrazak.dev</a>
+            <a href="mailto:cheekqyla@gmail.com" className="font-display text-lg font-semibold">cheekqyla@gmail.com</a>
           </div>
         </div>
 
@@ -33,7 +33,7 @@ export function Contact() {
           <div className="relative space-y-4">
             <Field label="Name" placeholder="Your name" />
             <Field label="Email" type="email" placeholder="you@email.com" />
-            <Field label="Message" placeholder="Tell me about your project" textarea />
+            <Field label="Message" placeholder="Tell me about your purpose" textarea />
             <button
               type="submit"
               className="group inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-ink py-3.5 text-sm font-semibold text-background transition-colors hover:bg-pink"

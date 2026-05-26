@@ -1,7 +1,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 import { ArrowUpRight } from "lucide-react";
-import portrait from "@/assets/portrait.png";
+import portrait from "@/assets/Selfpic.png";
 import { FloatingShapes, Triangle } from "./shapes";
 
 const ROLES = [
