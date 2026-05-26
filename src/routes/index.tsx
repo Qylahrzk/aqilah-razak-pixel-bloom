@@ -26,6 +26,7 @@ function Index() {
       <Experience />
       <Certifications />
       <Projects />
+      <Artworks />
       <Contact />
       <Footer />
     </main>
