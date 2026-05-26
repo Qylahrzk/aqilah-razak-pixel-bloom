@@ -1,5 +1,49 @@
 import { motion } from "framer-motion";
+import { School, BookOpen, GraduationCap, Home, MapPin } from "lucide-react";
 import { Triangle } from "./shapes";
+
+const EDUCATION = [
+  {
+    icon: School,
+    level: "Primary School",
+    school: "SK Padang Kubu",
+    period: "2011 — 2016",
+    location: "Kuala Terengganu, Terengganu",
+    description: "Started my academic journey, building foundations in reading, writing and curiosity.",
+  },
+  {
+    icon: Home,
+    level: "Boarding School",
+    school: "Sekolah Kebangsaan Seri Budiman (FELDA)",
+    period: "2017 — 2019",
+    location: "Kuala Terengganu, Terengganu",
+    description: "Developed independence, discipline and early leadership skills in a boarding environment.",
+  },
+  {
+    icon: BookOpen,
+    level: "High School",
+    school: "SMK Padang Kubu",
+    period: "2020 — 2021",
+    location: "Kuala Terengganu, Terengganu",
+    description: "Took the Science stream and discovered a deep interest in technology and problem-solving.",
+  },
+  {
+    icon: GraduationCap,
+    level: "Matriculation",
+    school: "Kolej Matrikulasi Perak (KMPk)",
+    period: "2021 — 2023",
+    location: "Gopeng, Perak",
+    description: "Completed Module 3 (Computer Science), sharpening programming skills and building project experience.",
+  },
+  {
+    icon: GraduationCap,
+    level: "University",
+    school: "Universiti Teknologi MARA (UiTM)",
+    period: "2023 — Present",
+    location: "Kuala Terengganu, Terengganu",
+    description: "Pursuing Bachelor of Computer Science (Mobile Computing), focusing on app development and UI/UX design.",
+  },
+];
 
 export function About() {
   return (
@@ -50,6 +94,64 @@ export function About() {
             </a>
           </div>
         </motion.div>
+      </div>
+
+      {/* Education Timeline */}
+      <div className="mt-32">
+        <div className="text-center">
+          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-pink">— 02 / Education</p>
+          <h2 className="mt-3 font-display text-4xl font-bold">My Academic Journey</h2>
+          <p className="mx-auto mt-3 max-w-md text-sm text-muted-foreground">
+            From primary school to university — the path that shaped me.
+          </p>
+        </div>
+
+        <div className="relative mt-16">
+          <div className="absolute left-4 top-0 h-full w-px bg-border md:left-1/2 md:-translate-x-px" />
+
+          {EDUCATION.map((item, idx) => {
+            const isLeft = idx % 2 === 1;
+            return (
+              <motion.div
+                key={item.level}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-60px" }}
+                transition={{ duration: 0.6, delay: idx * 0.1 }}
+                className={`relative mb-10 flex items-start gap-6 md:gap-0 ${isLeft ? "md:flex-row-reverse" : ""}`}
+              >
+                <div className="absolute left-4 top-6 z-10 h-3 w-3 -translate-x-[5px] rounded-full bg-yellow ring-4 ring-yellow/20 md:left-1/2 md:-translate-x-1.5" />
+
+                <div className="hidden md:block md:w-1/2" />
+
+                <div className={`ml-10 md:ml-0 md:w-1/2 ${isLeft ? "md:pr-12" : "md:pl-12"}`}>
+                  <div className="rounded-2xl border border-border bg-card p-5 shadow-sm transition-shadow hover:shadow-[0_20px_50px_-15px_rgba(255,200,0,0.25)]">
+                    <div className="flex items-center gap-3">
+                      <div className="grid h-9 w-9 place-items-center rounded-xl bg-yellow/10 text-yellow">
+                        <item.icon className="h-4 w-4" />
+                      </div>
+                      <div>
+                        <h3 className="font-display text-base font-semibold">{item.level}</h3>
+                        <p className="text-xs text-muted-foreground">{item.school}</p>
+                      </div>
+                    </div>
+                    <div className="mt-3 flex flex-wrap items-center gap-3 text-xs text-muted-foreground">
+                      <span className="inline-flex items-center gap-1 rounded-full bg-secondary px-2 py-0.5">
+                        {item.period}
+                      </span>
+                      <span className="inline-flex items-center gap-1">
+                        <MapPin className="h-3 w-3" /> {item.location}
+                      </span>
+                    </div>
+                    <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                      {item.description}
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+            );
+          })}
+        </div>
       </div>
     </section>
   );
