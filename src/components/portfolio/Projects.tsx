@@ -8,6 +8,9 @@ import {
   DialogTitle,
   DialogDescription,
 } from "@/components/ui/dialog";
+import makanmanaImg from "@/assets/projects/makanmana.jpg";
+import diaryquestImg from "@/assets/projects/diaryquest.jpg";
+import spendlyticImg from "@/assets/projects/spendlytic.jpg";
 
 const PROJECTS = [
   {
@@ -16,7 +19,7 @@ const PROJECTS = [
     platform: "Android",
     stack: ["Flutter", "Supabase", "Python API", "Groq", "Gemini API", "Google Maps API"],
     accent: "from-pink to-pink/60",
-    screen: ["Today's pick", "Spicy noodles", "4.8★ · 12 min away"],
+    image: makanmanaImg,
     overview:
       "MakanMana is a hybrid restaurant recommender that fuses Latent Dirichlet Allocation (LDA) with Knowledge-Based Filtering algorithm, then layers a multi-LLM chatbot on top so users can chat their cravings instead of scrolling endless listings.",
     role: "Mobile Developer · ML Integrator · UI Designer",
@@ -38,7 +41,7 @@ const PROJECTS = [
     platform: "Android",
     stack: ["Flutter", "Supabase", "Gemini API"],
     accent: "from-yellow to-pink",
-    screen: ["Active trips", "Block B → C", "Driver: Aqilah"],
+    image: diaryquestImg,
     overview:
       "DiaryQuest turns daily journaling into a quest. Users unlock streaks, earn badges and chat with a reflective AI companion that helps them process the day.",
     role: "Mobile Developer · UI/UX Gamification Designer",
@@ -60,7 +63,7 @@ const PROJECTS = [
     platform: "iOS & Android",
     stack: ["Flutter", "Supabase", "Gemini API"],
     accent: "from-ink to-pink",
-    screen: ["This month", "RM 1,284", "Saved 18%"],
+    image: spendlyticImg,
     overview:
       "Spendlytic+ is a smart expense tracker that learns your spending habits, auto-categorises transactions and gives Gemini-powered extracting budget insights.",
     role: "Mobile Developer · UI/UX Designer",
@@ -111,23 +114,15 @@ export function Projects() {
               onClick={() => setActive(idx)}
               className="group cursor-pointer rounded-3xl bg-background p-5 shadow-[0_30px_80px_-40px_rgba(0,0,0,0.3)] transition-shadow hover:shadow-[0_40px_100px_-30px_rgba(0,0,0,0.4)]"
             >
-              {/* Phone mockup */}
+              {/* Phone mockup with real screenshot */}
               <div className={`relative mx-auto h-72 w-44 rounded-[2rem] bg-gradient-to-br ${p.accent} p-2 shadow-2xl`}>
-                <div className="flex h-full w-full flex-col items-start justify-between rounded-[1.6rem] bg-ink p-4 text-background">
-                  <div className="flex w-full items-center justify-between text-[10px] opacity-70">
-                    <span>9:41</span>
-                    <span>●●●</span>
-                  </div>
-                  <div>
-                    <p className="text-[10px] uppercase tracking-widest text-pink">{p.screen[0]}</p>
-                    <p className="mt-1 font-display text-xl font-bold leading-tight">{p.screen[1]}</p>
-                    <p className="mt-1 text-[11px] opacity-70">{p.screen[2]}</p>
-                  </div>
-                  <div className="flex w-full gap-1">
-                    <div className="h-1.5 flex-1 rounded-full bg-pink" />
-                    <div className="h-1.5 w-3 rounded-full bg-white/30" />
-                    <div className="h-1.5 w-3 rounded-full bg-white/30" />
-                  </div>
+                <div className="h-full w-full overflow-hidden rounded-[1.6rem] bg-ink">
+                  <img
+                    src={p.image}
+                    alt={`${p.name} app screenshot`}
+                    loading="lazy"
+                    className="h-full w-full object-cover"
+                  />
                 </div>
               </div>
 

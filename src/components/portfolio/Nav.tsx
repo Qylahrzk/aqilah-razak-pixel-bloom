@@ -30,7 +30,10 @@ export function Nav() {
         ))}
       </nav>
       <a
-        href="#contact"
+        href="/cv.pdf"
+        download
+        target="_blank"
+        rel="noopener noreferrer"
         className="inline-flex items-center gap-2 rounded-full bg-yellow px-4 py-2 text-xs font-semibold text-ink transition-transform hover:scale-105"
       >
         <Download className="h-3.5 w-3.5" /> Download CV
