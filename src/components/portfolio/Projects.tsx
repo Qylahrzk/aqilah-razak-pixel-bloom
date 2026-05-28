@@ -70,6 +70,7 @@ const PROJECTS = [
       "Spendlytic+ is a smart expense tracker that learns your spending habits, auto-categorises transactions and gives Gemini-powered extracting budget insights.",
     role: "Mobile Developer · UI/UX Designer",
     duration: "Personal Project · 2025-2026",
+    github: "",
     features: [
       "Biometric-protected vault for financial data",
       "AI auto-categorisation of expenses",
