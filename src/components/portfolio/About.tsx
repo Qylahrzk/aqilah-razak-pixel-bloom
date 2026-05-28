@@ -1,5 +1,4 @@
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { School, BookOpen, GraduationCap, Home, MapPin, Award, BadgeCheck } from "lucide-react";
 import { Triangle } from "./shapes";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
