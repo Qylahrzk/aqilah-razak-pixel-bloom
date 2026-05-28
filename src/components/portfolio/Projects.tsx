@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowUpRight, Smartphone, Sparkles, Target, Lightbulb, Wrench } from "lucide-react";
+import { ArrowUpRight, Smartphone, Sparkles, Target, Lightbulb, Wrench, Code2, ExternalLink } from "lucide-react";
 import { useState } from "react";
 import {
   Dialog,
@@ -24,6 +24,7 @@ const PROJECTS = [
       "MakanMana is a hybrid restaurant recommender that fuses Latent Dirichlet Allocation (LDA) with Knowledge-Based Filtering algorithm, then layers a multi-LLM chatbot on top so users can chat their cravings instead of scrolling endless listings.",
     role: "Mobile Developer · ML Integrator · UI Designer",
     duration: "Final Year Project · Oct 2025",
+    github: "",
     features: [
       "Hybrid recommender combining user preferences, location & ratings",
       "Conversational discovery powered by Groq (fast) + Gemini (reasoning)",
@@ -46,6 +47,7 @@ const PROJECTS = [
       "DiaryQuest turns daily journaling into a quest. Users unlock streaks, earn badges and chat with a reflective AI companion that helps them process the day.",
     role: "Mobile Developer · UI/UX Gamification Designer",
     duration: "Personal Project · 2025-2026",
+    github: "",
     features: [
       "Biometric login (fingerprint / face) for private entries",
       "Gamified streak system with badges and milestones",
@@ -68,6 +70,7 @@ const PROJECTS = [
       "Spendlytic+ is a smart expense tracker that learns your spending habits, auto-categorises transactions and gives Gemini-powered extracting budget insights.",
     role: "Mobile Developer · UI/UX Designer",
     duration: "Personal Project · 2025-2026",
+    github: "",
     features: [
       "Biometric-protected vault for financial data",
       "AI auto-categorisation of expenses",
@@ -139,8 +142,21 @@ export function Projects() {
                     </span>
                   ))}
                 </div>
-                <div className="mt-4 inline-flex items-center gap-1 text-xs font-semibold text-pink opacity-0 transition-opacity group-hover:opacity-100">
-                  Read case study <ArrowUpRight className="h-3 w-3" />
+                <div className="mt-4 flex items-center gap-4">
+                  <span className="inline-flex items-center gap-1 text-xs font-semibold text-pink opacity-0 transition-opacity group-hover:opacity-100">
+                    Read case study <ArrowUpRight className="h-3 w-3" />
+                  </span>
+                  {p.github && (
+                    <a
+                      href={p.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={(e) => e.stopPropagation()}
+                      className="inline-flex items-center gap-1.5 rounded-full bg-secondary px-3 py-1.5 text-[10px] font-semibold text-foreground transition-colors hover:bg-pink hover:text-ink"
+                    >
+                      <Code2 className="h-3 w-3" /> Source Code
+                    </a>
+                  )}
                 </div>
               </div>
             </motion.article>
@@ -158,6 +174,16 @@ export function Projects() {
                 </div>
                 <DialogTitle className="font-display text-3xl font-bold">{p.name}</DialogTitle>
                 <DialogDescription className="text-sm">{p.tagline}</DialogDescription>
+                {p.github && (
+                  <a
+                    href={p.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-3 inline-flex w-fit items-center gap-2 rounded-full bg-secondary px-4 py-2 text-xs font-semibold text-foreground transition-colors hover:bg-pink hover:text-ink"
+                  >
+                    <Code2 className="h-4 w-4" /> View on GitHub <ExternalLink className="h-3 w-3" />
+                  </a>
+                )}
               </DialogHeader>
 
               <div className="mt-2 space-y-6 text-sm">
