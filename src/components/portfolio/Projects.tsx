@@ -24,6 +24,7 @@ const PROJECTS = [
       "MakanMana is a hybrid restaurant recommender that fuses Latent Dirichlet Allocation (LDA) with Knowledge-Based Filtering algorithm, then layers a multi-LLM chatbot on top so users can chat their cravings instead of scrolling endless listings.",
     role: "Mobile Developer · ML Integrator · UI Designer",
     duration: "Final Year Project · Oct 2025",
+    github: "",
     features: [
       "Hybrid recommender combining user preferences, location & ratings",
       "Conversational discovery powered by Groq (fast) + Gemini (reasoning)",
