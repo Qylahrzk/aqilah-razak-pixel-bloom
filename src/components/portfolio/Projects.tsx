@@ -142,8 +142,21 @@ export function Projects() {
                     </span>
                   ))}
                 </div>
-                <div className="mt-4 inline-flex items-center gap-1 text-xs font-semibold text-pink opacity-0 transition-opacity group-hover:opacity-100">
-                  Read case study <ArrowUpRight className="h-3 w-3" />
+                <div className="mt-4 flex items-center gap-4">
+                  <span className="inline-flex items-center gap-1 text-xs font-semibold text-pink opacity-0 transition-opacity group-hover:opacity-100">
+                    Read case study <ArrowUpRight className="h-3 w-3" />
+                  </span>
+                  {p.github && (
+                    <a
+                      href={p.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={(e) => e.stopPropagation()}
+                      className="inline-flex items-center gap-1.5 rounded-full bg-secondary px-3 py-1.5 text-[10px] font-semibold text-foreground transition-colors hover:bg-pink hover:text-ink"
+                    >
+                      <Code2 className="h-3 w-3" /> Source Code
+                    </a>
+                  )}
                 </div>
               </div>
             </motion.article>
