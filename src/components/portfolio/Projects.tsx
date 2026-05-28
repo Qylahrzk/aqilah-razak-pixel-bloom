@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowUpRight, Smartphone, Sparkles, Target, Lightbulb, Wrench } from "lucide-react";
+import { ArrowUpRight, Smartphone, Sparkles, Target, Lightbulb, Wrench, Github } from "lucide-react";
 import { useState } from "react";
 import {
   Dialog,
