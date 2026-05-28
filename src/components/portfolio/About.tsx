@@ -191,6 +191,93 @@ export function About() {
           })}
         </div>
       </div>
+
+      {/* Awards & Achievements */}
+      <div className="mt-32">
+        <div className="text-center">
+          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-pink">— 03 / Achievements</p>
+          <h2 className="mt-3 font-display text-4xl font-bold">Awards & Certifications</h2>
+          <p className="mx-auto mt-3 max-w-md text-sm text-muted-foreground">
+            Milestones and recognitions along my journey.
+          </p>
+        </div>
+
+        <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {AWARDS.map((award, idx) => (
+            <motion.div
+              key={award.title}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: 0.6, delay: idx * 0.1 }}
+            >
+              <Dialog>
+                <div className="group relative h-full rounded-2xl border border-border bg-card p-5 shadow-sm transition-all hover:shadow-[0_20px_50px_-15px_rgba(255,200,0,0.25)]">
+                  <div className="flex items-center gap-3">
+                    <div className="grid h-10 w-10 place-items-center rounded-xl bg-yellow/10 text-yellow">
+                      <award.icon className="h-5 w-5" />
+                    </div>
+                    <div className="min-w-0 flex-1">
+                      <h3 className="font-display text-sm font-semibold leading-tight">{award.title}</h3>
+                      <p className="text-xs text-muted-foreground">{award.issuer}</p>
+                    </div>
+                  </div>
+                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground line-clamp-3">
+                    {award.description}
+                  </p>
+                  <div className="mt-4 flex items-center justify-between">
+                    <span className="inline-flex items-center gap-1 rounded-full bg-secondary px-2 py-0.5 text-xs text-muted-foreground">
+                      {award.year}
+                    </span>
+                    <DialogTrigger asChild>
+                      <button
+                        onClick={() => setSelectedAward(award)}
+                        className="inline-flex items-center gap-1.5 rounded-full bg-yellow/10 px-3 py-1.5 text-xs font-semibold text-yellow transition-colors hover:bg-yellow hover:text-ink"
+                      >
+                        <BadgeCheck className="h-3.5 w-3.5" />
+                        Verify
+                      </button>
+                    </DialogTrigger>
+                  </div>
+                </div>
+
+                <DialogContent className="max-w-2xl">
+                  <DialogHeader>
+                    <DialogTitle className="font-display text-xl">{award.title}</DialogTitle>
+                  </DialogHeader>
+                  <div className="mt-4">
+                    {award.certificateImage ? (
+                      <img
+                        src={award.certificateImage}
+                        alt={`${award.title} certificate`}
+                        className="w-full rounded-lg object-contain"
+                      />
+                    ) : (
+                      <div className="flex aspect-[4/3] w-full flex-col items-center justify-center rounded-lg border-2 border-dashed border-border bg-secondary/50">
+                        <Award className="h-12 w-12 text-muted-foreground/50" />
+                        <p className="mt-3 text-sm text-muted-foreground">Certificate image placeholder</p>
+                        <p className="mt-1 text-xs text-muted-foreground/70">
+                          Add certificate image path to &quot;{award.title}&quot;
+                        </p>
+                      </div>
+                    )}
+                    <div className="mt-4 rounded-xl bg-secondary/50 p-4">
+                      <div className="flex items-center justify-between text-sm">
+                        <span className="text-muted-foreground">Issuer</span>
+                        <span className="font-semibold">{award.issuer}</span>
+                      </div>
+                      <div className="mt-2 flex items-center justify-between text-sm">
+                        <span className="text-muted-foreground">Year</span>
+                        <span className="font-semibold">{award.year}</span>
+                      </div>
+                    </div>
+                  </div>
+                </DialogContent>
+              </Dialog>
+            </motion.div>
+          ))}
+        </div>
+      </div>
     </section>
   );
 }
