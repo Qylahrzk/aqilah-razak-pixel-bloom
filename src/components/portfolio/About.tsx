@@ -229,7 +229,6 @@ export function About() {
                     </span>
                     <DialogTrigger asChild>
                       <button
-                        onClick={() => setSelectedAward(award)}
                         className="inline-flex items-center gap-1.5 rounded-full bg-yellow/10 px-3 py-1.5 text-xs font-semibold text-yellow transition-colors hover:bg-yellow hover:text-ink"
                       >
                         <BadgeCheck className="h-3.5 w-3.5" />
