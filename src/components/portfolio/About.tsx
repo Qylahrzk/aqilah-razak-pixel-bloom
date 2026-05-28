@@ -2,6 +2,11 @@ import { motion } from "framer-motion";
 import { School, BookOpen, GraduationCap, Home, MapPin, Award, BadgeCheck } from "lucide-react";
 import { Triangle } from "./shapes";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import sem1 from "@/assets/awards/sem1.jpg";
+import sem2 from "@/assets/awards/sem2.png";
+import sem3 from "@/assets/awards/sem3.png";
+import sem4 from "@/assets/awards/sem4.png";
+import sem5 from "@/assets/awards/sem5.jpg";
 
 const EDUCATION = [
   {
@@ -51,33 +56,41 @@ const AWARDS = [
     icon: Award,
     title: "Dean's List Award",
     issuer: "Universiti Teknologi MARA",
-    year: "2024",
+    year: "2023/2024 Semester 1",
     description: "Achieved Dean's List for outstanding academic performance in the Bachelor of Computer Science (Mobile Computing) program.",
-    certificateImage: "",
+    certificateImage: sem1,
   },
   {
     icon: Award,
-    title: "Hackathon Champion",
-    issuer: "UiTM HackFest",
-    year: "2024",
-    description: "First place winner for developing an innovative mobile app solution within 24 hours.",
-    certificateImage: "",
+    title: "Dean's List Award",
+    issuer: "Universiti Teknologi MARA",
+    year: "2023/2024 Semester 2",
+    description: "Achieved Dean's List for outstanding academic performance in the Bachelor of Computer Science (Mobile Computing) program.",
+    certificateImage: sem2,
   },
   {
     icon: Award,
-    title: "Best UI Design Award",
-    issuer: "Creative Tech Summit",
-    year: "2023",
-    description: "Recognized for exceptional user interface design in the student design competition.",
-    certificateImage: "",
+    title: "Dean's List Award",
+    issuer: "Universiti Teknologi MARA",
+    year: "2024/2025 Semester 3",
+    description: "Achieved Dean's List for outstanding academic performance in the Bachelor of Computer Science (Mobile Computing) program.",
+    certificateImage: sem3,
   },
   {
     icon: Award,
-    title: "Photography Competition Winner",
-    issuer: "UiTM Arts Festival",
-    year: "2023",
-    description: "First place in the campus photography competition for creative storytelling through visuals.",
-    certificateImage: "",
+    title: "Dean's List Award",
+    issuer: "Universiti Teknologi MARA",
+    year: "2024/2025 Semester 4",
+    description: "Achieved Dean's List for outstanding academic performance in the Bachelor of Computer Science (Mobile Computing) program.",
+    certificateImage: sem4,
+  },
+  {
+    icon: Award,
+    title: "Dean's List Award",
+    issuer: "Universiti Teknologi MARA",
+    year: "2025/2026 Semester 5",
+    description: "Achieved Dean's List for outstanding academic performance in the Bachelor of Computer Science (Mobile Computing) program.",
+    certificateImage: sem5,
   },
 ];
 
@@ -238,7 +251,7 @@ export function About() {
                   </div>
                 </div>
 
-                <DialogContent className="max-w-2xl">
+                <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
                   <DialogHeader>
                     <DialogTitle className="font-display text-xl">{award.title}</DialogTitle>
                   </DialogHeader>
@@ -247,7 +260,7 @@ export function About() {
                       <img
                         src={award.certificateImage}
                         alt={`${award.title} certificate`}
-                        className="w-full rounded-lg object-contain"
+                        className="mx-auto max-h-[60vh] w-auto rounded-lg object-contain"
                       />
                     ) : (
                       <div className="flex aspect-[4/3] w-full flex-col items-center justify-center rounded-lg border-2 border-dashed border-border bg-secondary/50">

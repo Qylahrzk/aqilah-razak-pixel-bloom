@@ -8,9 +8,9 @@ import {
   DialogTitle,
   DialogDescription,
 } from "@/components/ui/dialog";
-import makanmanaImg from "@/assets/projects/makanmana.jpg";
 import diaryquestImg from "@/assets/projects/diaryquest.jpg";
 import spendlyticImg from "@/assets/projects/spendlytic.jpg";
+import WelcomeMakanManaImg from "@/assets/projects/WelcomeMakanMana.jpg";
 
 const PROJECTS = [
   {
@@ -19,12 +19,12 @@ const PROJECTS = [
     platform: "Android",
     stack: ["Flutter", "Supabase", "Python API", "Groq", "Gemini API", "Google Maps API"],
     accent: "from-pink to-pink/60",
-    image: makanmanaImg,
+    image: WelcomeMakanManaImg,
     overview:
       "MakanMana is a hybrid restaurant recommender that fuses Latent Dirichlet Allocation (LDA) with Knowledge-Based Filtering algorithm, then layers a multi-LLM chatbot on top so users can chat their cravings instead of scrolling endless listings.",
     role: "Mobile Developer · ML Integrator · UI Designer",
     duration: "Final Year Project · Oct 2025",
-    github: "",
+    github: "https://github.com/Qylahrzk/makan_mana_v2",
     features: [
       "Hybrid recommender combining user preferences, location & ratings",
       "Conversational discovery powered by Groq (fast) + Gemini (reasoning)",
@@ -47,7 +47,7 @@ const PROJECTS = [
       "DiaryQuest turns daily journaling into a quest. Users unlock streaks, earn badges and chat with a reflective AI companion that helps them process the day.",
     role: "Mobile Developer · UI/UX Gamification Designer",
     duration: "Personal Project · 2025-2026",
-    github: "",
+    github: "https://github.com/Qylahrzk/DailyQuest",
     features: [
       "Biometric login (fingerprint / face) for private entries",
       "Gamified streak system with badges and milestones",
@@ -115,49 +115,55 @@ export function Projects() {
               transition={{ duration: 0.7, delay: idx * 0.1 }}
               whileHover={{ y: -10 }}
               onClick={() => setActive(idx)}
-              className="group cursor-pointer rounded-3xl bg-background p-5 shadow-[0_30px_80px_-40px_rgba(0,0,0,0.3)] transition-shadow hover:shadow-[0_40px_100px_-30px_rgba(0,0,0,0.4)]"
+              className="group cursor-pointer rounded-3xl bg-background p-5 shadow-[0_30px_80px_-40px_rgba(0,0,0,0.3)] transition-shadow hover:shadow-[0_40px_100px_-30px_rgba(0,0,0,0.4)] flex flex-col justify-between h-full"
             >
-              {/* Phone mockup with real screenshot */}
-              <div className={`relative mx-auto h-72 w-44 rounded-[2rem] bg-gradient-to-br ${p.accent} p-2 shadow-2xl`}>
-                <div className="h-full w-full overflow-hidden rounded-[1.6rem] bg-ink">
-                  <img
-                    src={p.image}
-                    alt={`${p.name} app screenshot`}
-                    loading="lazy"
-                    className="h-full w-full object-cover"
-                  />
+              <div>
+                {/* Phone mockup with real screenshot */}
+                <div className={`relative mx-auto w-44 rounded-2xl bg-gradient-to-br ${p.accent} p-2 shadow-2xl`}>
+                  <div className="aspect-[1080/2340] w-full overflow-hidden rounded-2xl bg-ink">
+                    <img
+                      src={p.image}
+                      alt={`${p.name} app screenshot`}
+                      loading="lazy"
+                      className="h-full w-full object-cover"
+                    />
+                  </div>
+                </div>
+
+                <div className="mt-6">
+                  <div className="flex items-center gap-2 text-[10px] uppercase tracking-widest text-muted-foreground">
+                    <Smartphone className="h-3 w-3" /> {p.platform}
+                  </div>
+                  <h3 className="mt-2 font-display text-2xl font-bold">{p.name}</h3>
+                  <p className="mt-1 text-sm text-muted-foreground">{p.tagline}</p>
+                  <div className="mt-4 flex flex-wrap gap-1.5">
+                    {p.stack.map((s) => (
+                      <span key={s} className="rounded-full border border-border bg-secondary px-2.5 py-1 text-[10px] font-medium">
+                        {s}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </div>
 
-              <div className="mt-6">
-                <div className="flex items-center gap-2 text-[10px] uppercase tracking-widest text-muted-foreground">
-                  <Smartphone className="h-3 w-3" /> {p.platform}
-                </div>
-                <h3 className="mt-2 font-display text-2xl font-bold">{p.name}</h3>
-                <p className="mt-1 text-sm text-muted-foreground">{p.tagline}</p>
-                <div className="mt-4 flex flex-wrap gap-1.5">
-                  {p.stack.map((s) => (
-                    <span key={s} className="rounded-full border border-border bg-secondary px-2.5 py-1 text-[10px] font-medium">
-                      {s}
-                    </span>
-                  ))}
-                </div>
-                <div className="mt-4 flex items-center gap-4">
-                  <span className="inline-flex items-center gap-1 text-xs font-semibold text-pink opacity-0 transition-opacity group-hover:opacity-100">
-                    Read case study <ArrowUpRight className="h-3 w-3" />
-                  </span>
-                  {p.github && (
-                    <a
-                      href={p.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      onClick={(e) => e.stopPropagation()}
-                      className="inline-flex items-center gap-1.5 rounded-full bg-secondary px-3 py-1.5 text-[10px] font-semibold text-foreground transition-colors hover:bg-pink hover:text-ink"
-                    >
-                      <Code2 className="h-3 w-3" /> Source Code
-                    </a>
-                  )}
-                </div>
+              <div className="mt-6 pt-4 flex items-center justify-between border-t border-border/50">
+                <span className="inline-flex items-center gap-1 text-xs font-semibold text-pink">
+                  Read Case Study
+                  <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                </span>
+                {p.github ? (
+                  <a
+                    href={p.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={(e) => e.stopPropagation()}
+                    className="inline-flex items-center gap-1.5 rounded-full bg-pink/10 px-3 py-1.5 text-[10px] font-semibold text-pink transition-all hover:bg-pink hover:text-white cursor-pointer hover:scale-105"
+                  >
+                    <Code2 className="h-3.5 w-3.5" /> Source Code
+                  </a>
+                ) : (
+                  <span className="text-[10px] text-muted-foreground italic bg-secondary px-2.5 py-1.5 rounded-full border border-border/50">Coming soon</span>
+                )}
               </div>
             </motion.article>
           ))}
@@ -240,6 +246,6 @@ export function Projects() {
           )}
         </DialogContent>
       </Dialog>
-    </section>
+    </section >
   );
 }

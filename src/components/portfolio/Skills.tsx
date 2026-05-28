@@ -32,7 +32,7 @@ export function Skills() {
       <div className="grid gap-16 lg:grid-cols-2">
         {/* LEFT: bars */}
         <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-pink">— 03 / Skills</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-pink">— 04 / Skills</p>
           <h2 className="mt-3 font-display text-4xl font-bold">What my skills include</h2>
           <p className="mt-4 max-w-md text-sm leading-relaxed text-muted-foreground">
             I continuously develop my skills across both technical and creative
