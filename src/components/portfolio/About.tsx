@@ -82,7 +82,6 @@ const AWARDS = [
 ];
 
 export function About() {
-  const [selectedAward, setSelectedAward] = useState<typeof AWARDS[0] | null>(null);
   return (
     <section id="about" className="relative mx-auto max-w-7xl px-6 py-32">
       <div className="grid items-center gap-16 lg:grid-cols-2">
