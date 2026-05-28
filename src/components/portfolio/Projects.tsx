@@ -174,6 +174,16 @@ export function Projects() {
                 </div>
                 <DialogTitle className="font-display text-3xl font-bold">{p.name}</DialogTitle>
                 <DialogDescription className="text-sm">{p.tagline}</DialogDescription>
+                {p.github && (
+                  <a
+                    href={p.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-3 inline-flex w-fit items-center gap-2 rounded-full bg-secondary px-4 py-2 text-xs font-semibold text-foreground transition-colors hover:bg-pink hover:text-ink"
+                  >
+                    <Code2 className="h-4 w-4" /> View on GitHub <ExternalLink className="h-3 w-3" />
+                  </a>
+                )}
               </DialogHeader>
 
               <div className="mt-2 space-y-6 text-sm">
