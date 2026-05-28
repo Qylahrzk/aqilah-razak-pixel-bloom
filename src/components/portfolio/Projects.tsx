@@ -47,6 +47,7 @@ const PROJECTS = [
       "DiaryQuest turns daily journaling into a quest. Users unlock streaks, earn badges and chat with a reflective AI companion that helps them process the day.",
     role: "Mobile Developer · UI/UX Gamification Designer",
     duration: "Personal Project · 2025-2026",
+    github: "",
     features: [
       "Biometric login (fingerprint / face) for private entries",
       "Gamified streak system with badges and milestones",
