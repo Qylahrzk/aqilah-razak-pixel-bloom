@@ -194,13 +194,13 @@ export function Hero() {
             focused on intuitive, human-friendly experiences that feel as good
             as they look.
           </p>
-          <div className="mt-6 flex flex-wrap gap-x-3 gap-y-2 text-xs sm:text-sm font-medium text-foreground">
+          <div className="mt-6 flex flex-nowrap items-center gap-x-1.5 sm:gap-x-2.5 text-[11px] sm:text-xs md:text-sm font-medium text-foreground">
             <a href="#experience" className="whitespace-nowrap border-b-2 border-pink pb-0.5">My Experience</a>
-            <span className="text-muted-foreground">|</span>
+            <span className="text-muted-foreground opacity-50">|</span>
             <a href="#achievements" className="whitespace-nowrap border-b-2 border-transparent pb-0.5 transition-colors hover:border-pink">My Certs</a>
-            <span className="text-muted-foreground">|</span>
+            <span className="text-muted-foreground opacity-50">|</span>
             <a href="#projects" className="whitespace-nowrap border-b-2 border-transparent pb-0.5 transition-colors hover:border-pink">My Projects</a>
-            <span className="text-muted-foreground">|</span>
+            <span className="text-muted-foreground opacity-50">|</span>
             <a href="#artworks" className="whitespace-nowrap border-b-2 border-transparent pb-0.5 transition-colors hover:border-pink">My Arts</a>
           </div>
 

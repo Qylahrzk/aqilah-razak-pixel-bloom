@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Download } from "lucide-react";
+import { useEffect, useState } from "react";
 
 const links = [
   { href: "#home", label: "Home" },
@@ -12,6 +13,32 @@ const links = [
 ];
 
 export function Nav() {
+  const [activeSection, setActiveSection] = useState("#home");
+
+  useEffect(() => {
+    const observerOptions = {
+      root: null,
+      rootMargin: "-30% 0px -50% 0px",
+      threshold: 0,
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActiveSection(`#${entry.target.id}`);
+        }
+      });
+    }, observerOptions);
+
+    links.forEach((link) => {
+      const id = link.href.replace("#", "");
+      const element = document.getElementById(id);
+      if (element) observer.observe(element);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <motion.header
       initial={{ y: -30, opacity: 0 }}
@@ -22,12 +49,23 @@ export function Nav() {
       <a href="#home" className="flex items-center gap-1 font-display text-xl font-bold tracking-tight">
         ar<span className="text-pink">.</span>
       </a>
-      <nav className="hidden items-center gap-7 text-sm font-medium text-muted-foreground md:flex">
-        {links.map((l) => (
-          <a key={l.href} href={l.href} className="transition-colors hover:text-foreground">
-            {l.label}
-          </a>
-        ))}
+      <nav className="hidden items-center gap-7 text-sm font-medium md:flex">
+        {links.map((l) => {
+          const isActive = activeSection === l.href;
+          return (
+            <a
+              key={l.href}
+              href={l.href}
+              onClick={() => setActiveSection(l.href)}
+              className={`transition-colors duration-200 ${isActive
+                  ? "text-pink font-semibold"
+                  : "text-muted-foreground hover:text-foreground"
+                }`}
+            >
+              {l.label}
+            </a>
+          );
+        })}
       </nav>
       <a
         href="/cv.pdf"
