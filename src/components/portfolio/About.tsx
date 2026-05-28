@@ -47,7 +47,43 @@ const EDUCATION = [
   },
 ];
 
+const AWARDS = [
+  {
+    icon: Award,
+    title: "Dean's List Award",
+    issuer: "Universiti Teknologi MARA",
+    year: "2024",
+    description: "Achieved Dean's List for outstanding academic performance in the Bachelor of Computer Science (Mobile Computing) program.",
+    certificateImage: "",
+  },
+  {
+    icon: Award,
+    title: "Hackathon Champion",
+    issuer: "UiTM HackFest",
+    year: "2024",
+    description: "First place winner for developing an innovative mobile app solution within 24 hours.",
+    certificateImage: "",
+  },
+  {
+    icon: Award,
+    title: "Best UI Design Award",
+    issuer: "Creative Tech Summit",
+    year: "2023",
+    description: "Recognized for exceptional user interface design in the student design competition.",
+    certificateImage: "",
+  },
+  {
+    icon: Award,
+    title: "Photography Competition Winner",
+    issuer: "UiTM Arts Festival",
+    year: "2023",
+    description: "First place in the campus photography competition for creative storytelling through visuals.",
+    certificateImage: "",
+  },
+];
+
 export function About() {
+  const [selectedAward, setSelectedAward] = useState<typeof AWARDS[0] | null>(null);
   return (
     <section id="about" className="relative mx-auto max-w-7xl px-6 py-32">
       <div className="grid items-center gap-16 lg:grid-cols-2">
